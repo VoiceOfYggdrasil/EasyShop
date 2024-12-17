@@ -37,7 +37,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException("ERROR: Cannot retrieve Categories", e);
         }
         return categories;
     }
@@ -59,7 +59,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException("ERROR: Cannot retrieve CategoryID #" + categoryId, e);
         }
         return null;
     }
