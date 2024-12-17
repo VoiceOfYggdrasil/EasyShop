@@ -14,7 +14,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("categories")
+@RequestMapping("/categories")
 public class CategoriesController
 {
     private CategoryDao categoryDao;

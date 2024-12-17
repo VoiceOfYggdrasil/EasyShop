@@ -43,11 +43,11 @@ public class ProductsController
         }
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     @PreAuthorize("permitAll()")
     public Product getById(@PathVariable int id )
     {
-        Product product = null;
+        Product product;
         try
         {
             product = productDao.getById(id);
