@@ -30,14 +30,12 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
         String query = "SELECT * FROM categories ";
 
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            ResultSet resultSet = preparedStatement.executeQuery();
-            {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
                     Category category = mapRow(resultSet);
                     categories.add(category);
                 }
-            }
         } catch (SQLException e) {
             throw new RuntimeException("ERROR: Cannot retrieve Categories", e);
         }
